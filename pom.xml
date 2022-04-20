@@ -31,17 +31,8 @@
             <artifactId>woodstox-core</artifactId>
             <version>6.2.5</version>
         </dependency>
-        <!-- Для чего эта зависимость? Она где то используется? Удали-->
-        <dependency>
-            <groupId>commons-io</groupId>
-            <artifactId>commons-io</artifactId>
-            <version>1.4</version>
-        </dependency>
-        <dependency>
-            <groupId>com.thoughtworks.xstream</groupId>
-            <artifactId>xstream</artifactId>
-            <version>1.4.5</version>
-        </dependency>
+
+
 
         <!-- https://mvnrepository.com/artifact/javax.xml.bind/jaxb-api -->
         <dependency>
