@@ -8,7 +8,7 @@ public class Patient {
     private String secondName;
     private String id;
     private String firstName;
-
+    // Такая же херня
     public String getFirstName() {
         return firstName;
     }

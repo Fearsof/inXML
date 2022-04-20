@@ -13,10 +13,11 @@ public class XmlConvert {
         this.ordersJsonConverter = ordersJsonConverter;
     }
 
-    public void toConvertedXml() throws IOException {
+    public void toConvertedXml() throws IOException { // обработай исклчение try catch finally
         ObjectMapper xmlMapper = new XmlMapper();
         String xml = xmlMapper.writeValueAsString(ordersJsonConverter.converterJSON());
 // or
+        // путь сохранения может меняться, по этому нужно вынести путь в параметры метода и передавать уже оттуда
         xmlMapper.writeValue(new File("C:\\Users\\perko\\IdeaProjects\\inXML\\src\\main\\java\\clientMis\\services\\XML.xml"), ordersJsonConverter.converterJSON());
 
     }

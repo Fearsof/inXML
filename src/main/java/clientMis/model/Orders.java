@@ -8,7 +8,7 @@ public class Orders {
     private String hisid;
     private String id;
 
-
+    // такая же херня
     public String getHisid() {
         return hisid;
     }

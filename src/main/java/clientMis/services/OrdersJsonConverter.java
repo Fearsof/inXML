@@ -10,13 +10,14 @@ import java.util.List;
 import java.io.IOException;
 
 public class OrdersJsonConverter {
+    // инициадизация clientHttp происходит внутри класса, нужен модификатор доступа final. (Хорошая практика)
     private ClientHttp clientHttp;
 
     public OrdersJsonConverter(ClientHttp client) {
         this.clientHttp = client;
     }
 
-    public List<Order> converterJSON() throws IOException {
+    public List<Order> converterJSON() throws IOException { // обработай исключение try catch finally(finally если работа с ресурсами)
         ObjectMapper mapper = new ObjectMapper();
 
         mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);

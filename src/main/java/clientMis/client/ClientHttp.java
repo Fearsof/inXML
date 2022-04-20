@@ -16,22 +16,25 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.time.temporal.ValueRange;
 import java.util.List;
-
+// это для чего?
 @JsonAutoDetect
 
 
 public class ClientHttp {
- private final String url = "http://localhost:8096/server/api/orders";
+ private final String url = "http://localhost:8096/server/api/orders"; /*
+  у тебя всегда ресурс будет расположен на таком урле? А если поменяется? Нужно что бы путь
+  задавался из вне, конструктор в помощь.
+ */
 
- private HttpClient client = new DefaultHttpClient();
- private HttpGet request = new HttpGet(url);
- private HttpResponse response;
+ private HttpClient client = new DefaultHttpClient(); // можификатор final, инициализация внутри класса(Хорошая практика)
+ private HttpGet request = new HttpGet(url); // можификатор final, инициализация внутри класса(Хорошая практика)
+ private HttpResponse response; // можификатор final, инициализация внутри класса(Хорошая практика)
 
 
- public ClientHttp() throws IOException {
+ public ClientHttp() throws IOException { // класс не должен выкидывать исключение, лучше что бы выкидывал только метод getResponse
  }
 
- public String getResponse() throws IOException {
+ public String getResponse() throws IOException { // Пробрасывать исключение на верх не надо, обрабатывай в методе используй try catch finally
 response =  client.execute(request);
   BufferedReader rd = new BufferedReader(
           new InputStreamReader(response.getEntity().getContent()));
@@ -47,6 +50,8 @@ response =  client.execute(request);
 
  }
 }
+/** комментарии удали
+ * */
  /*public static void main(String[] args) throws IOException {
 
 

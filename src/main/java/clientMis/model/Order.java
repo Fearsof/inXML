@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Arrays;
 
 public class Order {
+    // Публичные методы должны быть ниже приватных полей
     public Orders getOrder() {
         return order;
     }

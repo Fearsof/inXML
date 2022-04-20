@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class OrderingInstitution {
     private String name;
     private String id;
-
+    // геттеры и сеттеры должны быть ниже конструкторов
     public String getName() {
 
         return name;

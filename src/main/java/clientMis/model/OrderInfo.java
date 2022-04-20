@@ -21,7 +21,7 @@ public class OrderInfo {
     public void setId(String id) {
         this.id = id;
     }
-
+    // Конструктор должен быть выше сеттеров и геттеров
     public OrderInfo(@JsonProperty(value = "code") String code,
                      @JsonProperty(value = "id") String id) {
         this.id = id;
