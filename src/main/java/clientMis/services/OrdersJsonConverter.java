@@ -10,8 +10,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import java.util.List;
 import java.io.IOException;
 
-public  class OrdersJsonConverter {
-    // инициадизация clientHttp происходит внутри класса, нужен модификатор доступа final. (Хорошая практика)
+public class OrdersJsonConverter {
+
     final private ClientHttp clientHttp;
 
     public OrdersJsonConverter(ClientHttp client) {
@@ -22,7 +22,7 @@ public  class OrdersJsonConverter {
         ObjectMapper mapper = new ObjectMapper();
 
         mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-        List <Order> asArray = null;
+        List<Order> asArray = null;
         try {
             asArray = mapper.readValue(clientHttp.getResponse(), List.class);
         } catch (JsonProcessingException e) {
@@ -30,5 +30,5 @@ public  class OrdersJsonConverter {
         }
 
         return asArray;
-}
+    }
 }

@@ -15,9 +15,9 @@
     <!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
     <dependencies>
         <dependency>
-        <groupId>org.apache.httpcomponents</groupId>
-        <artifactId>httpclient</artifactId>
-        <version>4.5.13</version>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.5.13</version>
         </dependency>
 
         <dependency>
@@ -31,7 +31,6 @@
             <artifactId>woodstox-core</artifactId>
             <version>6.2.5</version>
         </dependency>
-
 
 
         <!-- https://mvnrepository.com/artifact/javax.xml.bind/jaxb-api -->

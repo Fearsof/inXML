@@ -14,17 +14,17 @@ public class XmlConvert {
         this.ordersJsonConverter = ordersJsonConverter;
     }
 
-    public void toConvertedXml()  {
+    public void toConvertedXml() {
         ObjectMapper xmlMapper = new XmlMapper();
+        File XML = new File("C:\\Users\\perko\\IdeaProjects\\inXML\\src\\main\\java\\clientMis\\services\\XML1.xml");
         try {
             String xml = xmlMapper.writeValueAsString(ordersJsonConverter.converterJSON());
         } catch (JsonProcessingException e) {
             e.printStackTrace();
         }
-// or
-        // путь сохранения может меняться, по этому нужно вынести путь в параметры метода и передавать уже оттуда
+
         try {
-            xmlMapper.writeValue(new File("C:\\Users\\perko\\IdeaProjects\\inXML\\src\\main\\java\\clientMis\\services\\XML.xml"), ordersJsonConverter.converterJSON());
+            xmlMapper.writeValue(XML, ordersJsonConverter.converterJSON());
         } catch (IOException e) {
             e.printStackTrace();
         }

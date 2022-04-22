@@ -21,18 +21,24 @@ import java.util.List;
 
 
 public class ClientHttp {
- private final String url = "http://localhost:8096/server/api/orders"; /*
+ private String url; /*
   у тебя всегда ресурс будет расположен на таком урле? А если поменяется? Нужно что бы путь
   задавался из вне, конструктор в помощь.
  */
 
+
  private final HttpClient client = new DefaultHttpClient();
- private final HttpGet request = new HttpGet(url);
+ private  HttpGet request ;
  private  HttpResponse response;
 
+    public ClientHttp (String url){
+        this.url = url;
+
+    }
  public String getResponse() {
      BufferedReader rd = null;
      StringBuffer result = null;
+    request = new HttpGet(url);
 
      try {
          response = client.execute(request);
